@@ -1,0 +1,7 @@
+username: user
+password: pass
+otpseed: dwnqdqkdbhjfebkwbhj
+domain: domain.tld
+domains:
+    - apikey1: test-a.domain.tld
+    - apikey2: test-b.domain.tld

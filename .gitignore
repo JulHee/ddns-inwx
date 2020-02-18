@@ -1,0 +1,3 @@
+*.pyc
+app/config.yaml
+app/log/*.log

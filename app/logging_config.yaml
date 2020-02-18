@@ -1,0 +1,43 @@
+version: 1
+formatters:
+  verbose:
+    format: '%(asctime)s %(levelname)7s: %(name)s|%(process)d|%(thread)d: %(message)s'
+    datefmt: '%d/%m/%Y %H:%M:%S'
+  brief:
+    format: '%(asctime)s %(levelname)7s: %(name)s: %(message)s'
+    datefmt: '%d/%m/%Y %H:%M:%S'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: verbose
+    stream: ext://sys.stdout
+  debugfile:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    filename: log/debug.log
+    maxBytes: 1024
+    formatter: brief
+  infofile:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    filename: log/info.log
+    maxBytes: 1024
+    formatter: brief
+loggers:
+  flask_app:
+    level: DEBUG
+    handlers: [console, debugfile, infofile]
+    propagate: no
+  server.inwx:
+    level: DEBUG
+    handlers: [console, debugfile, infofile]
+    propagate: no
+  server.utils:
+    level: DEBUG
+    handlers: [console, debugfile, infofile]
+    propagate: no
+  server.routes:
+    level: DEBUG
+    handlers: [console, debugfile, infofile]
+    propagate: no

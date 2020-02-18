@@ -1,0 +1,15 @@
+version: '3'
+services:
+  flask:
+    image: ddns-inwx-flask
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    command: uwsgi --ini /etc/uwsgi/inwx.ini
+    volumes:
+      - "./app/config:/app/config"
+    environment:
+      FLASK_APP: /app/manage.py
+      PYTHONPATH: /app
+    ports:
+      - 5050:80
