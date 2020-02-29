@@ -15,6 +15,7 @@ RUN pip install requests
 RUN pip install -r requirements.txt
 
 RUN mkdir -p /etc/uwsgi/
-COPY uwsgi/uwsgi.ini /etc/uwsgi/inwx.ini
+COPY uwsgi/uwsgi.ini /etc/uwsgi/uwsgi.ini
+COPY uwsgi/uwsgi.proxy.ini /etc/uwsgi/uwsgi.proxy.ini
 
 COPY . /app

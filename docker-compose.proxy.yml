@@ -5,7 +5,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-    command: uwsgi --ini /etc/uwsgi/inwx.proxy.ini
+    command: uwsgi --ini /etc/uwsgi/uwsgi.proxy.ini
     volumes:
       - "./app/config:/app/config"
     environment:
